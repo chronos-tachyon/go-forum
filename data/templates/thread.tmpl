@@ -1,0 +1,9 @@
+{{- define "title"}}{{.Site.Title}} | {{.Board.Title}} | {{.Topic.Title}} | {{.Thread.Title}}{{end}}
+{{- define "pageMain"}}
+    <ul>
+    {{- range $post := .Posts}}
+      <li>{{$post.Body}}</li>
+    {{- end}}
+    </ul>
+{{- end}}
+{{- template "page" .}}

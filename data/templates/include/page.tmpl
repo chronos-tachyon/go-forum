@@ -1,0 +1,80 @@
+{{- define "page" -}}
+<!DOCTYPE html>
+<html lang="{{.Site.Lang}}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="{{.Site.Viewport}}">
+    <title>{{block "title" .}}{{.Site.Title}}{{end}}</title>
+
+    {{- range $meta := .Site.Metas }}
+    {{$meta.Render}}
+    {{- end}}
+    {{- range $meta := .Metas }}
+    {{$meta.Render}}
+
+    {{- end}}
+    {{- range $link := .Site.Links }}
+    {{$link.Render}}
+    {{- end}}
+    {{- range $link := .Links }}
+    {{$link.Render}}
+
+    {{- end}}
+    {{- range $script := .Site.Scripts }}
+    {{$script.Render}}
+    {{- end}}
+    {{- range $script := .Scripts }}
+    {{$script.Render}}
+    {{- end}}
+
+    {{- block "head" .}}{{end}}
+  </head>
+  <body>
+    {{- block "body" .}}
+
+    {{- block "pageHeader" .}}
+    <header id="pageHeader">
+      {{- block "pageLogo" .}}
+      <div id="pageLogo">
+        <h1>{{template "title" .}}</h1>
+      </div>
+      {{- end}}
+
+      {{- block "pageNav" .}}
+      <nav id="pageNav">
+        <ul>
+          <li><a href="/f">Home</a></li>
+        </ul>
+        <span id="pageNavUserName"><a href="{{.User.URL}}">{{.User.Handle}}</a></span>
+        <span id="pageNavLogOut"><a href="/logout">Log out</a></span>
+      </nav>
+      {{- end}}
+    </header>
+    {{- end}}
+
+    {{- block "pageMain" .}}
+    <main id="pageMain">
+    </main>
+    {{- end}}
+
+    {{- block "pageFooter" .}}
+    <footer id="pageFooter">
+      {{- block "pageDisclaimer" .}}
+      <div id="pageDisclaimer">
+        All posts are copyrighted by their respective creators.  All rights
+        reserved except where otherwise specified.
+      </div>
+      {{- end}}
+
+      {{- block "pagePoweredBy" .}}
+      <div id="pagePoweredBy">
+        Powered by <a href="https://github.com/chronos-tachyon/go-forum/">go-forum</a>.
+      </div>
+      {{- end}}
+    </footer>
+    {{- end}}
+
+    {{- end}}
+  </body>
+</html>
+{{- end -}}

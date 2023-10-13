@@ -1,0 +1,8 @@
+{{- define "pageMain"}}
+    <ul>
+    {{- range $board := .Boards}}
+      <li><a href="{{$board.URL}}">{{$board.Title}}</a></li>
+    {{- end}}
+    </ul>
+{{- end}}
+{{- template "page" .}}

@@ -1,0 +1,41 @@
+html {
+  background: #fff;
+  color: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    background: #000;
+    color: #fff;
+  }
+}
+
+#pageHeader {
+  max-width: 800px;
+}
+#pageNav {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr auto auto;
+}
+#pageNav > ul {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+}
+#pageNav > ul > li {
+  min-width: 100px;
+  display: inline;
+  padding: 0 2px;
+  border-left: 1px solid #ccc;
+  text-align: left;
+}
+#pageNav > ul > li:first-child {
+  border-left: none;
+}
+#pageNavUserName, #pageNavLogOut {
+  min-width: 100px;
+  height: fit-content;
+  border-left: 1px solid #ccc;
+  text-align: right;
+}

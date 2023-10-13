@@ -1,0 +1,16 @@
+{
+  "lang": "en-US",
+  "title": "My Forum",
+  "viewport": "width=device-width, initial-scale=1",
+  "metas": [
+    {"type": "name", "name": "theme-color", "content": "#ffffff"},
+    {"type": "name", "name": "theme-color", "content": "#222222", "media": "(prefers-color-scheme: dark)"}
+  ],
+  "links": [
+    {"href": "/static/normalize.css", "rel": "stylesheet", "type": "text/css"},
+    {"href": "/static/site.css", "rel": "stylesheet", "type": "text/css"}
+  ],
+  "scripts": [
+    {"src": "/static/site.js", "defer": true}
+  ]
+}

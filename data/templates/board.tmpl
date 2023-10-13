@@ -1,0 +1,9 @@
+{{- define "title"}}{{.Site.Title}} | {{.Board.Title}}{{end}}
+{{- define "pageMain"}}
+    <ul>
+    {{- range $topic := .Topics}}
+      <li><a href="{{$topic.URL}}">{{$topic.Title}}</a></li>
+    {{- end}}
+    </ul>
+{{- end}}
+{{- template "page" .}}
